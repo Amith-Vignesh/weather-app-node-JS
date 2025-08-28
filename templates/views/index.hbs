@@ -1,0 +1,26 @@
+<html lang="en">
+    <head>
+        <title>weather</title>
+        <link rel="icon" href="/img/weather.jpg">
+        <link rel="stylesheet" href="/css/style.css">
+        
+    </head>
+    <body>
+        <div class="main-content">
+            {{> header}}
+            <p> Welcome to the weather app</p>
+
+            <form action="/weather" method="post">
+                <input type="text" name="address" placeholder="Enter location">
+                <button type="submit">Get Weather</button>
+            </form>
+
+            <p id="message-1"> </p>
+            <p id="message-2"> </p>
+        </div>
+        {{!-- <p>Created by {{name}}</p> --}}
+        {{> footer}}
+
+        <script src="/js/app.js"></script>
+    </body>
+</html> 
