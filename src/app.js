@@ -30,7 +30,6 @@ app.get("/",( req, res) => {
 })
 
 app.get('/help',(req,res) =>{
-    // res.sendFile(path.join(publicDirectoryPath, '/help.html'));
     res.render('help',{
         title: 'Help page',
         email: 'support@gmail.com',
@@ -54,27 +53,6 @@ app.get('/about',(req,res) => {
    });
 })
 
-
-//Not working
-// app.get('*', (req, res) => {
-//   res.status(404).send('404 page not found');
-// });
-
-// app.get('/help/*', (req, res) => {
-//     res.status(404).send('Help article not found');
-// });
-
-// app.get('/weather',(req,res) => {
-//    if(!req.query.address){
-//        return res.send({
-//            error: 'You must provide an address'
-//        })
-//    }
-//    res.send({
-//        forecast: 'It is snowing',
-//        location: req.query.address,
-//    });
-// })
 
 app.get('/weather', (req, res) => {
     if (!req.query.address) {
@@ -103,7 +81,6 @@ app.get('/weather', (req, res) => {
 })
 
 app.use((req, res) => {
-    // res.status(404).send('404 page not found');
     res.render('notFound',{
         title: '404',
         name: 'Page not found',
